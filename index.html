@@ -1,0 +1,196 @@
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SchoolTrack</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="manifest" href="manifest.json">
+
+    <meta name="theme-color" content="#1f4e79">
+
+</head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SchoolTrack</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <div class="brand">
+            <span class="inventory-icon">📦</span>
+
+            <div>
+                <h1>SchoolTrack</h1>
+                <p>Offline School Inventory System</p>
+            </div>
+        </div>
+
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <!-- DASHBOARD -->
+        <section id="dashboard">
+
+            <h2>📊 Dashboard</h2>
+
+            <div class="dashboard-cards">
+
+                <div class="card">
+                    <h3>Total Stock</h3>
+                    <p id="totalStock">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Available</h3>
+                    <p id="availableStock">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Borrowed</h3>
+                    <p id="borrowedStock">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>For Repair</h3>
+                    <p id="repairStock">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Missing</h3>
+                    <p id="missingStock">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Pending Reports</h3>
+                    <p id="pendingReports">0</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- INVENTORY -->
+        <section id="inventory">
+
+            <h2>📦 Inventory</h2>
+
+            <button onclick="showAddItemForm()">
+                + Add New Item
+            </button>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search inventory..."
+                oninput="searchInventory()"
+            >
+
+            <div id="inventoryList">
+
+                <!-- Inventory items will appear here -->
+
+            </div>
+
+        </section>
+
+
+        <!-- REPORTS -->
+        <section id="reports">
+
+            <h2>📝 Reports</h2>
+
+            <button onclick="showReportForm()">
+                + Add Report
+            </button>
+
+            <div id="reportsList">
+
+                <!-- Reports will appear here -->
+
+            </div>
+
+        </section>
+
+
+        <!-- BACKUP -->
+        <section id="backup">
+
+            <h2>💾 Backup & Transfer</h2>
+
+            <button onclick="exportData()">
+                Export Backup
+            </button>
+
+            <button onclick="document.getElementById('importFile').click()">
+                Import Backup
+            </button>
+
+            <input
+                type="file"
+                id="importFile"
+                accept=".json"
+                style="display:none"
+                onchange="importData(event)"
+            >
+
+        </section>
+
+    </main>
+
+
+    <!-- MODAL -->
+    <div id="modal" class="modal">
+
+        <div class="modal-content">
+
+            <button
+                class="close"
+                onclick="closeModal()">
+                ×
+            </button>
+
+            <div id="modalContent">
+
+                <!-- Forms will appear here -->
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- TOAST MESSAGE -->
+    <div id="toast"></div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="app.js"></script>
+
+</body>
+
+</html>
+<head>
+    <link rel="manifest" href="manifest.json">
+
