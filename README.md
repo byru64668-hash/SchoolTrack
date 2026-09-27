@@ -1,2 +1,0 @@
-# SchoolTrack
-Offline School Inventory 
